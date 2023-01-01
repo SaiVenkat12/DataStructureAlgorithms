@@ -47,13 +47,32 @@ namespace DataStructuresAlgorithms
                     Add(word);
                 }
             }
+        public void OrderedSearch(G num)
+        {
+            Node<G> temp = this.head;
+            while (temp != null)
+            {
+                if (temp.data.Equals(num))
+                {
+                    Console.WriteLine("This Number: {0} is found ", temp.data);
 
-            internal void Display()
+                    return;
+                }
+                temp = temp.next;
+            }
+            if (temp == null)
+            {
+                Console.WriteLine("This Number: {0} is not found", num);
+                Add(num);
+            }
+        }
+
+        public void Display()
             {
                 Node<G> temp = this.head;
                 if (temp == null)
                 {
-                    Console.WriteLine("Linked list is empty");
+                    Console.WriteLine("Generic Linked list is empty");
                 }
                 while (temp != null)
                 {
